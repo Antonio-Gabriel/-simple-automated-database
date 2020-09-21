@@ -1,0 +1,41 @@
+CREATE TABLE IF NOT EXISTS tbl_Livro(
+	Id_Livro SMALLINT AUTO_INCREMENT PRIMARY KEY,
+    Nome_Livro VARCHAR(50) NOT NULL,
+    ISBN VARCHAR(30) NOT NULL,
+    ID_Autor SMALLINT NOT NULL,
+    Data_Pub DATE NOT NULL,
+	Preco_Livro decimal
+);
+
+SHOW TABLES;
+SELECT DATABASE() as DB_NOW;
+
+CREATE TABLE IF NOT EXISTS tbl_Autores(
+	ID_Autores SMALLINT AUTO_INCREMENT PRIMARY KEY,
+    Nome_Autor VARCHAR(50),
+    Sobrenome_Autor VARCHAR(60) 
+);
+
+CREATE TABLE IF NOT EXISTS tbl_Editoras(
+	ID_Editora SMALLINT AUTO_INCREMENT PRIMARY KEY,
+    Nome_Editora VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS tb_users(
+	ID_user SMALLINT AUTO_INCREMENT,
+    NameUser VARCHAR(50) NOT NULL,
+    PhoneUser int default 0,
+    CONSTRAINT pk_tb_users PRIMARY KEY(ID_user)
+)AUTO_INCREMENT = 10;
+
+TRUNCATE TABLE tb_users;
+ALTER TABLE tb_users DROP COLUMN ID_user;
+ALTER TABLE tb_users ADD ID_user SMALLINT NOT NULL;
+
+SELECT *FROM tb_users;
+INSERT INTO tb_users(NameUser,PhoneUser) VALUES ('Antonny Gabriel',998987876);
+INSERT INTO tb_users(NameUser,PhoneUser) VALUES ('Gabriel Angels',984454333);
+INSERT INTO tb_users(NameUser,PhoneUser) VALUES ('Angels Stome',993432356);
+
+
+
